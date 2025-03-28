@@ -4,10 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #75614f;
+            --background-light: #f5f3ef;
+            --white: #b6a586;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-light);
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        #about p {
+            margin-bottom: 10px;
+        }
+
+        #tech-items {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .tech-item {
+            flex: 1;
+            position: relative;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: scale(1.05);
+        }
+
+        .tech-text {
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            background-color: #f9f9f9;
+        }
+
+        .tech-text h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .tech-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .tech-item:hover .tech-image {
+            opacity: 1;
+        }
+
+        .tech-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #newsletter {
+            text-align: center;
+        }
+
+        #newsletter form {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #newsletter input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 4px 0 0 4px;
+        }
+
+        #newsletter .button {
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-
     <div class="container">
         <header>
             <h1>About This Page</h1>
@@ -16,21 +161,19 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Born in the Philippines, raised in Hong Kong, and currently living in Melbourne.</p>
-            <p>Avid tech enthusiast and coffee lover.</p>
-            <p>Professional background in digital marketing, focusing on web analytics and automation.</p>
+            <p>• <strong>Born</strong> in the Philippines, <strong>raised</strong> in Hong Kong, and currently <strong>living</strong> in Melbourne.</p>
+            <p>• Avid <strong>tech enthusiast</strong> and <strong>coffee lover</strong>.</p>
+            <p>• Professional background in <strong>digital marketing</strong>, with a focus on <strong>web analytics and automation</strong>.</p>
         </section>
 
         <section id="tech-items">
-            <h2>Featured Tech Items</h2>
-
             <div class="tech-item">
                 <div class="tech-text">
                     <h3>Bose 700 Headphones</h3>
                     <p>Premium noise-canceling headphones that deliver an immersive audio experience.</p>
                 </div>
                 <div class="tech-image">
-                    <img src="images/bose-700.jpg" alt="Bose 700 Headphones">
+                    <img src="assets/images/bose-700.jpg" alt="Bose 700 Headphones">
                 </div>
             </div>
 
@@ -40,7 +183,7 @@
                     <p>Compact yet powerful, perfect for both productivity and entertainment.</p>
                 </div>
                 <div class="tech-image">
-                    <img src="images/ipad-mini.jpg" alt="iPad Mini 6">
+                    <img src="assets/images/ipad-mini-6.jpg" alt="iPad Mini 6">
                 </div>
             </div>
 
@@ -50,7 +193,7 @@
                     <p>A great mechanical keyboard for work and leisure, offering a satisfying typing experience.</p>
                 </div>
                 <div class="tech-image">
-                    <img src="images/keychron.jpg" alt="Keychron Keyboard">
+                    <img src="assets/images/keychron.jpg" alt="Keychron Keyboard">
                 </div>
             </div>
         </section>
@@ -67,6 +210,5 @@
             <p>&copy; 2025. All Rights Reserved.</p>
         </footer>
     </div>
-
 </body>
 </html>
